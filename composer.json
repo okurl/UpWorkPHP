@@ -1,0 +1,6 @@
+{
+  "name": "upwork/PHPUpWork",
+  "require": {
+    "upwork/php-upwork": "v1.3.0"
+  }
+}

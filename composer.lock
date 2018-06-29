@@ -1,0 +1,75 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "cfdf2ec86c4884e8304f701afd334bbb",
+    "packages": [
+        {
+            "name": "upwork/php-upwork",
+            "version": "v1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/upwork/php-upwork.git",
+                "reference": "56fd692390d77a4e4dbf9380adc2504895f776b1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/upwork/php-upwork/zipball/56fd692390d77a4e4dbf9380adc2504895f776b1",
+                "reference": "56fd692390d77a4e4dbf9380adc2504895f776b1",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/php-invoker": "*",
+                "phpunit/phpunit": "3.7.*"
+            },
+            "suggest": {
+                "apigen/apigen": "dev-master",
+                "ext-oauth": "This extension from PECL provides OAuth consumer and provider bindings. See more under http://www.php.net/oauth",
+                "roave/better-reflection": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Upwork\\API": "src/"
+                },
+                "files": [
+                    "src/Upwork/API/constants.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Maksym Novozhylov",
+                    "email": "mnovozhilov@upwork.com",
+                    "homepage": "http://mnov.tel",
+                    "role": "Software Engineer, Platform/Integrity"
+                }
+            ],
+            "description": "PHP bindings for Upwork API",
+            "homepage": "http://www.upwork.com",
+            "keywords": [
+                "api",
+                "php",
+                "upwork"
+            ],
+            "time": "2018-05-24T00:00:00+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
