@@ -97,6 +97,10 @@ echo 'access Secret:- '.$accessTokenInfo['access_secret'].'<br/>';
 ?>
 
     <script>
+        if(localStorage.getItem('sitetoken')==null || localStorage.getItem('sitetoken')==undefined || localStorage.getItem('sitetoken')==""){
+            localStorage.setItem('userId','<?php echo $_SESSION['userId'] ?>');
+            localStorage.setItem('sitetoken','<?php echo $_SESSION['sitetoken'] ?>');
+        }
         localStorage.setItem('access_token','<?php echo $accessTokenInfo['access_token']; ?>');
         localStorage.setItem('access_secret','<?php echo $accessTokenInfo['access_secret']; ?>');
         

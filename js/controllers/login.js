@@ -328,7 +328,7 @@ NG_PMOne.controller("mainCtrl", function ($rootScope, $scope, Hyper,$timeout, $h
 		$scope.loginUser();
 	}
 
-	$scope.onInit();
+	//$scope.onInit();
 });
 
 
