@@ -8,8 +8,8 @@ NG_PMOne.controller("mainCtrl", function ($rootScope, $scope, Hyper,$timeout, $h
 	$scope.msg = 'Logging in to upwork portal. Please wait...';
 	//Global Variables
 	$scope.login = {
-		email: 'Arun.Prasad3@tatacommunications.com',
-		password: '2018@Klstinc'
+		email: 'projectmarketplace@tatacommunications.com',
+		password: 'Tata@2016'
 	};
 
 	$scope.error = {
