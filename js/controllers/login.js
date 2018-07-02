@@ -319,16 +319,24 @@ NG_PMOne.controller("mainCtrl", function ($rootScope, $scope, Hyper,$timeout, $h
 			});
 		}
 		else{
-
+			$timeout(function () {	
+				$scope.saveUpWorkTokens();
+			},1100);
 		}
 	}
 	
 	//Initialize all functioins
 	$scope.onInit = function () {
-		$scope.loginUser();
+		if(localStorage.getItem('sitetoken')!=null){
+			$scope.getUpWorkToken();
+		}
+		else{
+			$timeout(function () {	
+				$scope.onInit();
+			},1000);
+		}	
 	}
-
-	//$scope.onInit();
+	$scope.onInit();
 });
 
 
