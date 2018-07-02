@@ -1,4 +1,23 @@
-<?php
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Up Work Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body{
+            margin:0;
+            padding:0;
+        }
+    </style>
+    
+</head>
+<body>
+    <div style="height: 100%;width: 100%;position: absolute;background: #fff;z-index: 99999;text-align: center;display: table;">
+        <p style="display: table-cell;vertical-align: middle;">Redirecting to Upwork.....</p>
+    </div>
+    <?php
 /**
  * Authentication library for Upwork API using OAuth
  * Example: using your own authentication OAuth client
@@ -14,6 +33,13 @@
 // Our php-oauth library - used in this example - requires a session
 session_start();
 
+$_SESSION['userId'] = $_GET['userId'];
+?>
+    <script>
+        localStorage.setItem('userId','<?php echo $_SESSION['userId'] ?>');
+    </script>
+
+<?php
 require __DIR__ . '/vendor/autoload.php';
 
 // if you already have the tokens, they can be read from session
@@ -60,3 +86,6 @@ $auth = new \Upwork\API\Routers\Auth($client);
 $info = $auth->getUserInfo();
 
 print_r($info);
+?>
+</body>
+</html>
