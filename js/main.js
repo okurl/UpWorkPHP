@@ -10,6 +10,7 @@ function getTokens() {
         type: "GET",
         headers: {
             "accept": "application/json;odata=verbose",
+            "Authorization":'Bearer ' + localStorage.getItem('sitetoken')
         },
         success: function (data) {
             console.log('UPWork Token data', data.d.results);
@@ -50,7 +51,7 @@ function saveUpWorkTokens() {
         data: JSON.stringify(values),
         headers: {
             "accept": "application/json;odata=verbose",
-            "X-RequestDigest": localStorage.getItem('sitetoken'),
+            "Authorization":'Bearer ' + localStorage.getItem('sitetoken'),
             "content-Type": "application/json;odata=verbose"
         },
         success: function (data) {
