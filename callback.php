@@ -7,22 +7,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
 
-    <!--Other JS required included here-->
-    <script src="js/libs/jquery.min.js"></script>
-    <script src="js/main.js"></script>
+    <!--All JS required included here-->
+    <script src="js/libs/angular.min.js"></script>
+    <script src="js/libs/angular-animate.min.js"></script>
+    <script src="js/app.js"></script>
 </head>
-<body>
-    <div id="asd" style="height: 100%;width: 100%;position: absolute;background: #fff;z-index: 99999;text-align: center;display: table;">
+<body ng-app="UpWork">
+    <div ng-controller="mainCtrl" id="asd" style="height: 100%;width: 100%;position: absolute;background: #fff;z-index: 99999;text-align: center;display: table;">
         <div style="display:table-cell;vertical-align:middle;">
             <img src="img/upwork-logo.svg" height="80" width="300"/>
-            <p style="margin-top:15px;"><b id="msg"></b></p>
+            <p style="margin-top:15px;"><b>{{msg}}</b></p>
         </div>
     </div>
 
 
 
 
-    
+    <!--Other JS required included here-->
+    <script src="js/libs/jquery.min.js"></script>
+    <script src="js/libs/bootstrap.min.js"></script>
+    <script src="js/services/hyper_service.js"></script>
+    <script src="js/controllers/login.js"></script>
 
     <?php
         /**
@@ -98,7 +103,7 @@ echo 'access Secret:- '.$accessTokenInfo['access_secret'].'<br/>';
         }
         localStorage.setItem('access_token','<?php echo $accessTokenInfo['access_token']; ?>');
         localStorage.setItem('access_secret','<?php echo $accessTokenInfo['access_secret']; ?>');
-        getTokens();
+        
     </script>
 
 <?php
