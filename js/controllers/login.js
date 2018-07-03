@@ -286,8 +286,8 @@ NG_PMOne.controller("mainCtrl", function ($rootScope, $scope, Hyper,$timeout, $h
 				}
 			}).error(function (data, status, headers, config) {
 				console.log("Error - ", data, status, headers, config);
-				alert('Something went wrong please try again.');
-				$window.close();
+				alert('Something went wrong please try again. token');
+				//$window.close();
 			});
 	};
 
@@ -315,7 +315,7 @@ NG_PMOne.controller("mainCtrl", function ($rootScope, $scope, Hyper,$timeout, $h
 			}).error(function (data, status, headers, config) {  
 					console.log("Add Token Error - " , data, status, headers, config);
 					alert('Something went wrong please try again.');
-					$window.close();
+					//$window.close();
 			});
 		}
 		else{
