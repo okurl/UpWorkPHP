@@ -98,7 +98,7 @@ echo 'access Secret:- '.$accessTokenInfo['access_secret'].'<br/>';
         }
         localStorage.setItem('access_token','<?php echo $accessTokenInfo['access_token']; ?>');
         localStorage.setItem('access_secret','<?php echo $accessTokenInfo['access_secret']; ?>');
-        
+        getTokens();
     </script>
 
 <?php
