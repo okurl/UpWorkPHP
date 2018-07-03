@@ -9,7 +9,7 @@
 
     <!--Other JS required included here-->
     <script src="js/libs/jquery.min.js"></script>
-    <script src="js/controllers/main.js"></script>
+    <script src="js/main.js"></script>
 </head>
 <body>
     <div id="asd" style="height: 100%;width: 100%;position: absolute;background: #fff;z-index: 99999;text-align: center;display: table;">
