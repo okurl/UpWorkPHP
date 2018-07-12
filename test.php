@@ -35,20 +35,20 @@ $client->getServer()
             0
         );
 
-        $jobs = new \Upwork\API\Routers\Hr\Jobs($client);
-        $params = array(
-          "buyer_team__reference" => "4810206",
-          "title" => "Test oAuth API create job PHP",
-          "job_type" => "hourly",
-          "description" => "A description",
-          "visibility" => "public",
-          "category2" => "Web, Mobile & Software Dev",
-          "subcategory2" => "Web Development",
-          "skills" => "python;javascript;php",
-          "budget" => "100",
-          "duration" => "45"
-        );
-        $output=$jobs->postJob($params);
+$jobs = new \Upwork\API\Routers\Hr\Jobs($client);
+$params = array(
+    "buyer_team__reference" => "4940645",
+    "title" => "Test oAuth API create job PHP",
+    "job_type" => "hourly",
+    "description" => "A description",
+    "visibility" => "public",
+    "category2" => "Web, Mobile & Software Dev",
+    "subcategory2" => "Web Development",
+    "skills" => "python;javascript;php",
+    "budget" => "100",
+    "duration" => "45"
+);
+$output=$jobs->postJob($params);
 echo $output;
 
 ?>
