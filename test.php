@@ -44,9 +44,11 @@ $client->getServer()
           "visibility" => "public",
           "category2" => "Web, Mobile & Software Dev",
           "subcategory2" => "Web Development",
-          "skills" => "python;javascript;php"
+          "skills" => "python;javascript;php",
+          "budget" => "100",
+          "duration" => "45"
         );
-        $output=      $jobs->postJob($params);
-return $output;
+        $output=$jobs->postJob($params);
+echo $output;
 
 ?>
