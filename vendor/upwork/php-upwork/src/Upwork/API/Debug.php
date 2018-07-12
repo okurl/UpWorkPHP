@@ -47,7 +47,7 @@ class Debug
 
             $str .= ".\n";
 
-            //print_r('> ' . $str.'<br/>');
+            print_r('> ' . $str.'<br/>');
         }
     }
 }
