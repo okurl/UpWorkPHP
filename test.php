@@ -25,6 +25,16 @@ $config = new \Upwork\API\Config(
 
 $client = new \Upwork\API\Client($config);
 
+$client->getServer()
+        ->getInstance()
+        ->addServerToken(
+            $config::get('consumerKey'),
+            'access',
+            $_SESSION['access_token'],
+            $_SESSION['access_secret'],
+            0
+        );
+
 $jobs = new \Upwork\API\Routers\Jobs\Search($client);
 $params = array("q" => "python", "title" => "Web Developer");
 $output = $jobs->find($params);
