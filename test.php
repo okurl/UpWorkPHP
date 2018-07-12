@@ -38,7 +38,7 @@ $client->getServer()
 $jobs = new \Upwork\API\Routers\Hr\Jobs($client);
 $params = array(
     "buyer_team__reference" => "4940645",
-    "title" => "Test oAuth API create job PHP",
+    "title" => "Test oAuth API create job PHP Edit",
     "job_type" => "hourly",
     "description" => "A description edited",
     "visibility" => "public",
