@@ -40,15 +40,16 @@ $params = array(
     "buyer_team__reference" => "4940645",
     "title" => "Test oAuth API create job PHP",
     "job_type" => "hourly",
-    "description" => "A description",
+    "description" => "A description edited",
     "visibility" => "public",
     "category2" => "Web, Mobile & Software Dev",
     "subcategory2" => "Web Development",
     "skills" => "python;javascript;php",
-    "budget" => "100",
-    "duration" => "45"
+    "budget" => "999",
+    "duration" => "12"
 );
-$output=$jobs->postJob($params);
+$job_ref = "~01bf00e42095dac02a";
+$output=$jobs->editJob($job_ref,$params);
 echo $output;
 
 ?>
