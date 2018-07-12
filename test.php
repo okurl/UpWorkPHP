@@ -25,8 +25,9 @@ $config = new \Upwork\API\Config(
 
 $client = new \Upwork\API\Client($config);
 
-$teams = new \Upwork\API\Routers\Organization\Teams($client);
-$output = $teams->getList();
+$jobs = new \Upwork\API\Routers\Jobs\Search($client);
+$params = array("q" => "python", "title" => "Web Developer");
+$output = $jobs->find($params);
 return $output;
 
 ?>
