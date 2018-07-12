@@ -50,6 +50,6 @@ $params = array(
 );
 $job_ref = "~01bf00e42095dac02a";
 $output=$jobs->editJob($job_ref,$params);
-echo $output;
+echo json_encode($output);
 
 ?>
