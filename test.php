@@ -34,22 +34,24 @@ $client->getServer()
             $_SESSION['access_secret'],
             0
         );
-
-$jobs = new \Upwork\API\Routers\Hr\Jobs($client);
-$params = array(
-    "buyer_team__reference" => "4940645",
-    "title" => "Test oAuth API create job PHP Edit",
-    "job_type" => "hourly",
-    "description" => "A description edited",
-    "visibility" => "public",
-    "category2" => "Web, Mobile & Software Dev",
-    "subcategory2" => "Web Development",
-    "skills" => "python;javascript;php",
-    "budget" => "999",
-    "duration" => "12"
-);
-$job_ref = "~01bf00e42095dac02a";
-$output=$jobs->editJob($job_ref,$params);
-echo json_encode($output);
+if($_GET['method']=='editJob'){
+    $jobs = new \Upwork\API\Routers\Hr\Jobs($client);
+    $params = array(
+        "buyer_team__reference" => "4940645",
+        "title" => "Test oAuth API create job PHP",
+        "job_type" => "hourly",
+        "description" => "A description",
+        "visibility" => "public",
+        "category2" => "Web, Mobile & Software Dev",
+        "subcategory2" => "Web Development",
+        "skills" => "python;javascript;php",
+        "budget" => "999",
+        "duration" => "12"
+    );
+    $job_ref = "~01bf00e42095dac02a";
+    $output=$jobs->editJob($job_ref,$params);
+    echo json_encode($output);
+}
+    
 
 ?>
