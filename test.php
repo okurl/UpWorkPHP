@@ -16,7 +16,7 @@ $config = new \Upwork\API\Config(
         'accessToken'       => $_SESSION['access_token'],       // got access token
         'accessSecret'      => $_SESSION['access_secret'],      // got access secret
 //      'verifySsl'         => false,                           // whether to verify SSL
-      'debug'             => true,                            // enables debug mode
+ //     'debug'             => true,                            // enables debug mode
         'authType'          => 'OAuthPHPLib', // your own authentication type, see AuthTypes directory
         'mode' => 'web'
     )
@@ -55,13 +55,15 @@ if($_GET['operation']=='PostJob' && !empty($_GET['operation']) ){
     //Setting all params required to post a job
     $params = array(
         "buyer_team__reference" => $buyer_team_reference,
-        "title" => "Test oAuth API create job API",
+        "title" => "Test oAuth API create job APIS",
         "job_type" => "hourly",
         "description" => "A description",
         "visibility" => "public",
         "category2" => "Web, Mobile & Software Dev",
         "subcategory2" => "Web Development",
-        "skills" => "python;javascript"
+        "skills" => "python;javascript",
+        "budget" => "100",
+        "duration" => "12"
         /*
         "title" => $_GET["title"],
         "job_type" => $_GET["job_type"],
@@ -84,7 +86,7 @@ if($_GET['operation']=='PostJob' && !empty($_GET['operation']) ){
 if($_GET['operation']=='EditJob' && !empty($_GET['operation']) ){
     //reference id for posting job and other operation
     $buyer_team_reference = "4940645";
-    
+
     $jobs = new \Upwork\API\Routers\Hr\Jobs($client);
 
     //Setting all params required to edit a job
