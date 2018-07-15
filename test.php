@@ -106,6 +106,7 @@ if($_GET['operation']=='CancelJob' && !empty($_GET['operation']) ){
     return json_encode($response);
 }
 
+echo 'test';
 
 
 
