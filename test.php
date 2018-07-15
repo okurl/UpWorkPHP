@@ -35,9 +35,6 @@ $client->getServer()
             $_SESSION['access_secret'],
             0
         );
-//reference id for posting job and other operation
-
-$buyer_team_reference = "4940645";
 
 /* All main operations starts here---
  * Like Posting job,
@@ -49,6 +46,9 @@ $buyer_team_reference = "4940645";
 
 //Function for posting a job to upwork
 if($_GET['operation']=='PostJob' && !empty($_GET['operation']) ){
+
+    //reference id for posting job and other operation
+    $buyer_team_reference = "4940645";
 
     $jobs = new \Upwork\API\Routers\Hr\Jobs($client);
 
@@ -82,7 +82,9 @@ if($_GET['operation']=='PostJob' && !empty($_GET['operation']) ){
 
 //Function for posting a job to upwork
 if($_GET['operation']=='EditJob' && !empty($_GET['operation']) ){
-
+    //reference id for posting job and other operation
+    $buyer_team_reference = "4940645";
+    
     $jobs = new \Upwork\API\Routers\Hr\Jobs($client);
 
     //Setting all params required to edit a job
