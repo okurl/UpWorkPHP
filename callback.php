@@ -59,7 +59,7 @@
                 'requestToken'       => $_GET['oauth_token'],       // got access token
                 'verifier'      => $_GET['oauth_verifier'],      // got access secret
         //      'verifySsl'         => false,                           // whether to verify SSL
-                'debug'             => true,                            // enables debug mode
+                //'debug'             => true,                            // enables debug mode
                 'authType'          => 'OAuthPHPLib', // your own authentication type, see AuthTypes directory
                 'mode' => 'web'
             )

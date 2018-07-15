@@ -56,7 +56,7 @@ $config = new \Upwork\API\Config(
 //        'accessToken'       => $_SESSION['access_token'],       // got access token
 //        'accessSecret'      => $_SESSION['access_secret'],      // got access secret
 //        'verifySsl'         => false,                           // whether to verify SSL
-        'debug'             => true,                            // enables debug mode
+        //'debug'             => true,                            // enables debug mode
         'authType'          => 'OAuthPHPLib', // your own authentication type, see AuthTypes directory
         'mode' => 'web'
     )
