@@ -61,7 +61,7 @@ if($_GET['operation']=='PostJob' && !empty($_GET['operation']) ){
 
     $response = $jobs->postJob($params);
 
-    return json_encode($response);
+    echo json_encode($response);
 }
 
 //Function for posting a job to upwork
@@ -86,7 +86,7 @@ if($_GET['operation']=='EditJob' && !empty($_GET['operation']) ){
 
     $response = $jobs->editJob($job_ref,$params);
 
-    return json_encode($response);
+    echo json_encode($response);
 }
 
 //Function for posting a job to upwork
@@ -103,7 +103,7 @@ if($_GET['operation']=='CancelJob' && !empty($_GET['operation']) ){
 
     $response = $jobs->deleteJob($job_ref,$params);
 
-    return json_encode($response);
+    echo json_encode($response);
 }
 
 echo 'test';
