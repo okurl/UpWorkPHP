@@ -16,7 +16,7 @@ $config = new \Upwork\API\Config(
         'accessToken'       => $_SESSION['access_token'],       // got access token
         'accessSecret'      => $_SESSION['access_secret'],      // got access secret
 //      'verifySsl'         => false,                           // whether to verify SSL
-//      'debug'             => false,                            // enables debug mode
+ //     'debug'             => true,                            // enables debug mode
         'authType'          => 'OAuthPHPLib', // your own authentication type, see AuthTypes directory
         'mode' => 'web'
     )
@@ -26,12 +26,15 @@ $config = new \Upwork\API\Config(
 $client = new \Upwork\API\Client($config);
 
 //Adding token and secret to the server for authenicated user
-$client->getServer()->getInstance()->addServerToken($config::get('consumerKey'),'access',$_SESSION['access_token'],$_SESSION['access_secret'],0);
-
-
-//reference id for posting job and other operation
-
-$buyer_team_reference = "4940645";
+$client->getServer()
+        ->getInstance()
+        ->addServerToken(
+            $config::get('consumerKey'),
+            'access',
+            $_SESSION['access_token'],
+            $_SESSION['access_secret'],
+            0
+        );
 
 /* All main operations starts here---
  * Like Posting job,
@@ -44,11 +47,25 @@ $buyer_team_reference = "4940645";
 //Function for posting a job to upwork
 if($_GET['operation']=='PostJob' && !empty($_GET['operation']) ){
 
+    //reference id for posting job and other operation
+    $buyer_team_reference = "4940645";
+
     $jobs = new \Upwork\API\Routers\Hr\Jobs($client);
 
     //Setting all params required to post a job
     $params = array(
         "buyer_team__reference" => $buyer_team_reference,
+        /*
+        "title" => "Test oAuth API create job APIS",
+        "job_type" => "hourly",
+        "description" => "A description",
+        "visibility" => "public",
+        "category2" => "Web, Mobile & Software Dev",
+        "subcategory2" => "Web Development",
+        "skills" => "python;javascript",
+        "budget" => "100",
+        "duration" => "12"
+        */
         "title" => $_GET["title"],
         "job_type" => $_GET["job_type"],
         "description" => $_GET["description"],
@@ -57,15 +74,19 @@ if($_GET['operation']=='PostJob' && !empty($_GET['operation']) ){
         "budget" => $_GET["budget"],
         "duration" => $_GET["duration"],
         "contractor_type" => $_GET["contractor_type"],
+        "category2" => "Web, Mobile & Software Dev",
+        "subcategory2" => "Web Development"
     );
 
     $response = $jobs->postJob($params);
 
-    return json_encode($response);
+    echo json_encode($response);
 }
 
 //Function for posting a job to upwork
 if($_GET['operation']=='EditJob' && !empty($_GET['operation']) ){
+    //reference id for posting job and other operation
+    $buyer_team_reference = "4940645";
 
     $jobs = new \Upwork\API\Routers\Hr\Jobs($client);
 
@@ -79,14 +100,14 @@ if($_GET['operation']=='EditJob' && !empty($_GET['operation']) ){
         "start_date" => $_GET["start_date"],
         "budget" => $_GET["budget"],
         "duration" => $_GET["duration"],
-        "contractor_type" => $_GET["contractor_type"],
+        "contractor_type" => $_GET["contractor_type"]
     );
 
     $job_ref = $_GET['job_ref'];
 
     $response = $jobs->editJob($job_ref,$params);
 
-    return json_encode($response);
+    echo json_encode($response);
 }
 
 //Function for posting a job to upwork
@@ -103,22 +124,23 @@ if($_GET['operation']=='CancelJob' && !empty($_GET['operation']) ){
 
     $response = $jobs->deleteJob($job_ref,$params);
 
-    return json_encode($response);
+    echo json_encode($response);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+if($_GET['operation']=='test' && !empty($_GET['operation']) ){
+    $a =  array(
+        "title" => $_GET["title"],
+        "job_type" => $_GET["job_type"],
+        "description" => $_GET["description"],
+        "visibility" => $_GET["visibility"],
+        "start_date" => $_GET["start_date"],
+        "budget" => $_GET["budget"],
+        "duration" => $_GET["duration"],
+        "contractor_type" => $_GET["contractor_type"],
+        "token"=>$_GET["token"],
+        "secret"=>$_GET["secret"]
+    );
+    echo json_encode($a);
+}
 
 ?>
