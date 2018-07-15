@@ -73,8 +73,9 @@ if($_GET['operation']=='PostJob' && !empty($_GET['operation']) ){
         "start_date" => $_GET["start_date"],
         "budget" => $_GET["budget"],
         "duration" => $_GET["duration"],
-        "contractor_type" => $_GET["contractor_type"]
-   
+        "contractor_type" => $_GET["contractor_type"],
+        "category2" => "Web, Mobile & Software Dev",
+        "subcategory2" => "Web Development"
     );
 
     $response = $jobs->postJob($params);
