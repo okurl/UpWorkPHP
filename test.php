@@ -55,6 +55,7 @@ if($_GET['operation']=='PostJob' && !empty($_GET['operation']) ){
     //Setting all params required to post a job
     $params = array(
         "buyer_team__reference" => $buyer_team_reference,
+        /*
         "title" => "Test oAuth API create job APIS",
         "job_type" => "hourly",
         "description" => "A description",
@@ -64,7 +65,7 @@ if($_GET['operation']=='PostJob' && !empty($_GET['operation']) ){
         "skills" => "python;javascript",
         "budget" => "100",
         "duration" => "12"
-        /*
+        */
         "title" => $_GET["title"],
         "job_type" => $_GET["job_type"],
         "description" => $_GET["description"],
@@ -73,8 +74,7 @@ if($_GET['operation']=='PostJob' && !empty($_GET['operation']) ){
         "budget" => $_GET["budget"],
         "duration" => $_GET["duration"],
         "contractor_type" => $_GET["contractor_type"]
-
-        */
+   
     );
 
     $response = $jobs->postJob($params);
