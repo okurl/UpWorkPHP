@@ -112,7 +112,7 @@ if($_GET['operation']=='CancelJob' && !empty($_GET['operation']) ){
     echo json_encode($response);
 }
 
-if($_GET['operation']=='test' && !empty($_GET['test']) ){
+if($_GET['operation']=='test' && !empty($_GET['operation']) ){
     $a =  array(
         "title" => $_GET["title"],
         "job_type" => $_GET["job_type"],
