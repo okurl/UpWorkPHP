@@ -26,9 +26,15 @@ $config = new \Upwork\API\Config(
 $client = new \Upwork\API\Client($config);
 
 //Adding token and secret to the server for authenicated user
-$client->getServer()->getInstance()->addServerToken($config::get('consumerKey'),'access',$_SESSION['access_token'],$_SESSION['access_secret'],0);
-
-
+$client->getServer()
+        ->getInstance()
+        ->addServerToken(
+            $config::get('consumerKey'),
+            'access',
+            $_SESSION['access_token'],
+            $_SESSION['access_secret'],
+            0
+        );
 //reference id for posting job and other operation
 
 $buyer_team_reference = "4940645";
@@ -107,19 +113,5 @@ if($_GET['operation']=='CancelJob' && !empty($_GET['operation']) ){
 }
 
 echo 'test';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ?>
