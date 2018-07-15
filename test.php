@@ -62,7 +62,7 @@ if($_GET['operation']=='PostJob' && !empty($_GET['operation']) ){
         "start_date" => $_GET["start_date"],
         "budget" => $_GET["budget"],
         "duration" => $_GET["duration"],
-        "contractor_type" => $_GET["contractor_type"],
+        "contractor_type" => $_GET["contractor_type"]
     );
 
     $response = $jobs->postJob($params);
@@ -85,7 +85,7 @@ if($_GET['operation']=='EditJob' && !empty($_GET['operation']) ){
         "start_date" => $_GET["start_date"],
         "budget" => $_GET["budget"],
         "duration" => $_GET["duration"],
-        "contractor_type" => $_GET["contractor_type"],
+        "contractor_type" => $_GET["contractor_type"]
     );
 
     $job_ref = $_GET['job_ref'];
