@@ -74,8 +74,8 @@ if($_GET['operation']=='PostJob' && !empty($_GET['operation']) ){
         "budget" => $_GET["budget"],
         "duration" => $_GET["duration"],
         "contractor_type" => $_GET["contractor_type"],
-        "category2" => "Web, Mobile & Software Dev",
-        "subcategory2" => "Web Development"
+        "category2" => $_GET["category2"],
+        "subcategory2" => $_GET["subcategory2"]
     );
 
     $response = $jobs->postJob($params);
@@ -128,18 +128,8 @@ if($_GET['operation']=='CancelJob' && !empty($_GET['operation']) ){
 }
 
 if($_GET['operation']=='test' && !empty($_GET['operation']) ){
-    $a =  array(
-        "title" => $_GET["title"],
-        "job_type" => $_GET["job_type"],
-        "description" => $_GET["description"],
-        "visibility" => $_GET["visibility"],
-        "start_date" => $_GET["start_date"],
-        "budget" => $_GET["budget"],
-        "duration" => $_GET["duration"],
-        "contractor_type" => $_GET["contractor_type"],
-        "token"=>$_GET["token"],
-        "secret"=>$_GET["secret"]
-    );
+    $metadata = new \Upwork\API\Routers\Metadata($client);
+    $a = $metadata->getCategoriesV2();
     echo json_encode($a);
 }
 
