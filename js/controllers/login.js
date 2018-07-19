@@ -295,7 +295,7 @@ NG_PMOne.controller("mainCtrl", function ($rootScope, $scope, Hyper,$timeout, $h
 	//saving upwork tokens
 	$scope.saveUpWorkTokens = function(){
 		if(localStorage.getItem('access_token')!=null && localStorage.getItem('access_token')!=undefined && localStorage.getItem('access_token')!="" && localStorage.getItem('access_secret')!=null && localStorage.getItem('access_secret')!=undefined && localStorage.getItem('access_secret')!=""){
-			var listName='UpWorkTokens';
+			var listName='UWtokens';
 			var url = "/_api/Web/Lists/getByTitle('"+listName+"')/items";
 			var metaType = listName.split(" ").join("_x0020_");
 			
