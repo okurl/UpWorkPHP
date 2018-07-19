@@ -4,7 +4,6 @@ NG_PMOne.service("Hyper", function ($http, $q, SITE_SETTINGS){
 		
 		var _headers = { 
 			"Accept": "application/json;odata=verbose",
-			"Content-Type": "application/json;odata=verbose",
 			"Authorization":'Bearer ' + localStorage.getItem('sitetoken') 
 		};
 		
