@@ -42,6 +42,9 @@ $_SESSION['sitetoken'] = $_GET['sitetoken'];
         localStorage.setItem('userId','');
         localStorage.setItem('sitetoken','');
 
+        localStorage.removeItem('userId');
+        localStorage.removeItem('sitetoken');
+        
         localStorage.setItem('userId','<?php echo $_GET['userId'] ?>');
         localStorage.setItem('sitetoken','<?php echo $_GET['sitetoken'] ?>');        
     </script>
