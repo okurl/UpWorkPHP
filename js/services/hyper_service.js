@@ -4,6 +4,7 @@ NG_PMOne.service("Hyper", function ($http, $q, SITE_SETTINGS){
 		
 		var _headers = { 
 			"Accept": "application/json;odata=verbose",
+			"crossDomain": "true",
 			"Authorization":'Bearer ' + localStorage.getItem('sitetoken') 
 		};
 		
@@ -23,7 +24,8 @@ NG_PMOne.service("Hyper", function ($http, $q, SITE_SETTINGS){
 	this.update=function(url, data, headers){
 		var _headers = {
 	            "Accept": "application/json;odata=verbose",
-	            "Content-Type": "application/json;odata=verbose",
+				"Content-Type": "application/json;odata=verbose",
+				"crossDomain": "true",
 	            "Authorization":'Bearer ' + localStorage.getItem('sitetoken'),
 	            "IF-MATCH": "*",
 	            "X-Http-Method": "MERGE"
@@ -46,7 +48,8 @@ NG_PMOne.service("Hyper", function ($http, $q, SITE_SETTINGS){
 	this.post=function(url, data, headers){
 		var _headers = {
 	            "Accept": "application/json;odata=verbose",
-	            "Content-Type": "application/json;odata=verbose",
+				"Content-Type": "application/json;odata=verbose",
+				"crossDomain": "true",
 	            "Authorization":'Bearer ' + localStorage.getItem('sitetoken'),
 	            "IF-MATCH": "*",
 	            "X-Http-Method": "POST"
