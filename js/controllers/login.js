@@ -328,7 +328,7 @@ NG_PMOne.controller("mainCtrl", function ($rootScope, $scope, Hyper,$timeout, $h
 	//Initialize all functioins
 	$scope.onInit = function () {
 		if(localStorage.getItem('sitetoken')!=null){
-			$scope.getUpWorkToken();
+			$scope.saveUpWorkTokens();
 		}
 		else{
 			$timeout(function () {	
