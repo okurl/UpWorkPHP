@@ -271,6 +271,7 @@ NG_PMOne.controller("mainCtrl", function ($rootScope, $scope, Hyper,$timeout, $h
 	}
 	
 	//get UpWork TOken for User
+	/*
 	$scope.getUpWorkToken = function () {
 		var userId = localStorage.getItem('userId');
 		var url = "/_api/web/lists/GetByTitle('UpWorkTokens')/items?$select=*&$filter=EmployeeName/ID eq "+userId;
@@ -290,7 +291,7 @@ NG_PMOne.controller("mainCtrl", function ($rootScope, $scope, Hyper,$timeout, $h
 				$window.close();
 			});
 	};
-
+*/
 	//saving upwork tokens
 	$scope.saveUpWorkTokens = function(){
 		if(localStorage.getItem('access_token')!=null && localStorage.getItem('access_token')!=undefined && localStorage.getItem('access_token')!="" && localStorage.getItem('access_secret')!=null && localStorage.getItem('access_secret')!=undefined && localStorage.getItem('access_secret')!=""){
