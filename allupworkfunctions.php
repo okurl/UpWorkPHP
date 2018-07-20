@@ -5,9 +5,9 @@ session_start();
 
 require __DIR__ . '/vendor/autoload.php';
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
 
 // if you already have the tokens, they can be read from session
 $_SESSION['access_token'] = $_GET['token']; //'e54e62713aeb39b6938fdc42857b3bdb';
