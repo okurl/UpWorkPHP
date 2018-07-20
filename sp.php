@@ -14,8 +14,8 @@ $headers = array(
     "crossDomain"=>"true",
     "Authorization"=>$token
 );
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-curl_setopt($ch, CURLOPT_CUSTOMREQUEST, ‘GET’);
+curl_setopt($resource, CURLOPT_HTTPHEADER, $headers);
+curl_setopt($resource, CURLOPT_CUSTOMREQUEST, ‘GET’);
 
 
 
