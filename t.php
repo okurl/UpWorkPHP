@@ -30,5 +30,6 @@ error_reporting(E_ALL);
 
     return $authToken;
 }
+connect();
 
-echo "\$ssd";
+//echo "\$ssd";
