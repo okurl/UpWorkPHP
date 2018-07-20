@@ -24,7 +24,7 @@
 
 
     // Send the request & save response to $resp
-    $resp = curl_exec($curl);
+    $resp = curl_exec($resource);
     // Close request to clear up some resources
 
     echo $resp;
