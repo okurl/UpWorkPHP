@@ -29,6 +29,7 @@ function connect(){
 
     $authToken = curl_exec($ch);
 
+    echo $ch;
     echo $authToken;
 }
 connect();
