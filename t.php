@@ -1,9 +1,10 @@
 <?php
-function connect(){
-
-    ini_set('display_errors', 1);
+ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+function connect(){
+
+    
     
     $token = $_GET['token'];
     $url = "https://tatacommunications.sharepoint.com/sites/projectmarketplace_v1/_api/web/lists/GetByTitle('UpWorkTokens')/items?\$select=*&\$filter=EmployeeName/ID eq 10330";
@@ -28,7 +29,7 @@ error_reporting(E_ALL);
 
     $authToken = curl_exec($ch);
 
-    return $authToken;
+    echo $authToken;
 }
 connect();
 
