@@ -5,9 +5,9 @@ session_start();
 
 require __DIR__ . '/vendor/autoload.php';
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
 
 // if you already have the tokens, they can be read from session
 $_SESSION['access_token'] = $_GET['token']; //'e54e62713aeb39b6938fdc42857b3bdb';
@@ -84,7 +84,7 @@ if($_GET['operation']=='PostJob' && !empty($_GET['operation']) ){
 
     $response = $jobs->postJob($params);
 
-    echo json_encode($response);
+    echo $response;
 }
 
 //Function for posting a job to upwork
@@ -113,7 +113,7 @@ if($_GET['operation']=='EditJob' && !empty($_GET['operation']) ){
 
     $response = $jobs->editJob($job_ref,$params);
 
-    echo json_encode($response);
+    echo $response;
 }
 
 //Function for posting a job to upwork
@@ -130,13 +130,13 @@ if($_GET['operation']=='CancelJob' && !empty($_GET['operation']) ){
 
     $response = $jobs->deleteJob($job_ref,$params);
 
-    echo json_encode($response);
+    echo $response;
 }
 
 if($_GET['operation']=='test' && !empty($_GET['operation']) ){
     $metadata = new \Upwork\API\Routers\Metadata($client);
     $a = $metadata->getCategoriesV2();
-    echo json_encode($a);
+    echo $a;
 }
 
 ?>
