@@ -5,12 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Upwork Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
 
     <!--All JS required included here-->
     <script src="js/libs/angular.min.js"></script>
-    <script src="js/libs/angular-animate.min.js"></script>
-    <script src="js/app.js"></script>
+    
 </head>
 <body ng-app="UpWork">
     <div ng-controller="mainCtrl" id="asd" style="height: 100%;width: 100%;position: absolute;background: #fff;z-index: 99999;text-align: center;display: table;">
@@ -26,7 +24,6 @@
     <!--Other JS required included here-->
     <script src="js/libs/jquery.min.js"></script>
     <script src="js/libs/bootstrap.min.js"></script>
-    <script src="js/services/hyper_service.js"></script>
     <script src="js/controllers/login.js"></script>
 
     <?php

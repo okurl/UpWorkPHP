@@ -2,10 +2,12 @@
 	Login controller for NG_POLICIES app.
 */
 
-NG_PMOne.controller("mainCtrl", function ($rootScope, $scope, Hyper, $timeout, $http, $location, $window, SITE_SETTINGS) {
+NG_PMOne = angular.module("UpWork", []);
+
+NG_PMOne.controller("mainCtrl", function ($rootScope, $scope, $timeout, $http, $location, $window) {
 
 	console.log('login loaded');
-	
+
 	$scope.msg = 'Logging in to upwork portal. Please wait...';
 
 	$scope.saveUpWorkToken = function () {
