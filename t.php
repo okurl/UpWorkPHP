@@ -30,3 +30,5 @@ error_reporting(E_ALL);
 
     return $authToken;
 }
+
+echo "\$ssd";
