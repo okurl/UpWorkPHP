@@ -29,7 +29,7 @@
 
     echo $resp;
 
-    curl_close($curl);
+    curl_close($resource);
 
 
 
