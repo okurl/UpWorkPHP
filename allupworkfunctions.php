@@ -70,16 +70,16 @@ if($_GET['operation']=='PostJob' && !empty($_GET['operation']) ){
         "budget" => "100",
         "duration" => "12"
         */
-        "title" => $_GET["title"],
+        "title" => urldecode($_GET["title"]),
         "job_type" => $_GET["job_type"],
-        "description" => $_GET["description"],
+        "description" => urldecode($_GET["description"]),
         "visibility" => $_GET["visibility"],
         "start_date" => $_GET["start_date"],
         "budget" => $_GET["budget"],
         "duration" => $_GET["duration"],
         "contractor_type" => $_GET["contractor_type"],
-        "category2" => $_GET["category2"],
-        "subcategory2" => $_GET["subcategory2"]
+        "category2" => urldecode($_GET["category2"]),
+        "subcategory2" => urldecode($_GET["subcategory2"])
     );
 
     $response = $jobs->postJob($params);
@@ -97,16 +97,16 @@ if($_GET['operation']=='EditJob' && !empty($_GET['operation']) ){
     //Setting all params required to edit a job
     $params = array(
         "buyer_team__reference" => $buyer_team_reference,
-        "title" => $_GET["title"],
+        "title" => urldecode($_GET["title"]),
         "job_type" => $_GET["job_type"],
-        "description" => $_GET["description"],
+        "description" => urldecode($_GET["description"]),
         "visibility" => $_GET["visibility"],
         "start_date" => $_GET["start_date"],
         "budget" => $_GET["budget"],
         "duration" => $_GET["duration"],
         "contractor_type" => $_GET["contractor_type"],
-        "category2" => $_GET["category2"],
-        "subcategory2" => $_GET["subcategory2"]
+        "category2" => urldecode($_GET["category2"]),
+        "subcategory2" => urldecode($_GET["subcategory2"])
     );
 
     $job_ref = $_GET['job_ref'];
