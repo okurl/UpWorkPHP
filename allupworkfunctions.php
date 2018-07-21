@@ -87,7 +87,7 @@ if($_POST['operation']=='PostJob' && !empty($_POST['operation']) ){
         echo $response;
     }
     else{
-        echo json_decode($response);
+        echo json_encode($response);
     }
 }
 
