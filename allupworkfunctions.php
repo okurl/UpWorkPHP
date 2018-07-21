@@ -117,7 +117,12 @@ if($_POST['operation']=='EditJob' && !empty($_POST['operation']) ){
 
     $response = $jobs->editJob($job_ref,$params);
 
-    echo $response;
+    if(gettype ($response) == 'string'){
+        echo $response;
+    }
+    else{
+        echo json_encode($response);
+    }
 }
 
 //Function for posting a job to upwork
@@ -134,7 +139,12 @@ if($_POST['operation']=='CancelJob' && !empty($_POST['operation']) ){
 
     $response = $jobs->deleteJob($job_ref,$params);
 
-    echo $response;
+    if(gettype ($response) == 'string'){
+        echo $response;
+    }
+    else{
+        echo json_encode($response);
+    }
 }
 
 if($_POST['operation']=='test' && !empty($_POST['operation']) ){
