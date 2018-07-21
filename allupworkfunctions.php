@@ -83,8 +83,12 @@ if($_POST['operation']=='PostJob' && !empty($_POST['operation']) ){
     );
 
     $response = $jobs->postJob($params);
-
-    echo $response;
+    if(gettype ($response) == 'string'){
+        echo $response;
+    }
+    else{
+        echo json_decode($response);
+    }
 }
 
 //Function for posting a job to upwork
