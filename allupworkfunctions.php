@@ -10,8 +10,8 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 // if you already have the tokens, they can be read from session
-$_SESSION['access_token'] = $_GET['token']; //'e54e62713aeb39b6938fdc42857b3bdb';
-$_SESSION['access_secret']= $_GET['secret']; //'6ce6e0db9a90ee7e';
+$_SESSION['access_token'] = $_POST['token']; //'e54e62713aeb39b6938fdc42857b3bdb';
+$_SESSION['access_secret']= $_POST['secret']; //'6ce6e0db9a90ee7e';
 
 $config = new \Upwork\API\Config(
     array(
@@ -49,7 +49,7 @@ $client->getServer()
 
 
 //Function for posting a job to upwork
-if($_GET['operation']=='PostJob' && !empty($_GET['operation']) ){
+if($_POST['operation']=='PostJob' && !empty($_POST['operation']) ){
 
     //reference id for posting job and other operation
     $buyer_team_reference = "4940645";
@@ -70,16 +70,16 @@ if($_GET['operation']=='PostJob' && !empty($_GET['operation']) ){
         "budget" => "100",
         "duration" => "12"
         */
-        "title" => urldecode($_GET["title"]),
-        "job_type" => $_GET["job_type"],
-        "description" => urldecode($_GET["description"]),
-        "visibility" => $_GET["visibility"],
-        "start_date" => $_GET["start_date"],
-        "budget" => $_GET["budget"],
-        "duration" => $_GET["duration"],
-        "contractor_type" => $_GET["contractor_type"],
-        "category2" => urldecode($_GET["category2"]),
-        "subcategory2" => urldecode($_GET["subcategory2"])
+        "title" => $_POST["title"],
+        "job_type" => $_POST["job_type"],
+        "description" => $_POST["description"],
+        "visibility" => $_POST["visibility"],
+        "start_date" => $_POST["start_date"],
+        "budget" => $_POST["budget"],
+        "duration" => $_POST["duration"],
+        "contractor_type" => $_POST["contractor_type"],
+        "category2" => $_POST["category2"],
+        "subcategory2" => $_POST["subcategory2"]
     );
 
     $response = $jobs->postJob($params);
@@ -88,7 +88,7 @@ if($_GET['operation']=='PostJob' && !empty($_GET['operation']) ){
 }
 
 //Function for posting a job to upwork
-if($_GET['operation']=='EditJob' && !empty($_GET['operation']) ){
+if($_POST['operation']=='EditJob' && !empty($_POST['operation']) ){
     //reference id for posting job and other operation
     $buyer_team_reference = "4940645";
 
@@ -97,19 +97,19 @@ if($_GET['operation']=='EditJob' && !empty($_GET['operation']) ){
     //Setting all params required to edit a job
     $params = array(
         "buyer_team__reference" => $buyer_team_reference,
-        "title" => urldecode($_GET["title"]),
-        "job_type" => $_GET["job_type"],
-        "description" => urldecode($_GET["description"]),
-        "visibility" => $_GET["visibility"],
-        "start_date" => $_GET["start_date"],
-        "budget" => $_GET["budget"],
-        "duration" => $_GET["duration"],
-        "contractor_type" => $_GET["contractor_type"],
-        "category2" => urldecode($_GET["category2"]),
-        "subcategory2" => urldecode($_GET["subcategory2"])
+        "title" => $_POST["title"],
+        "job_type" => $_POST["job_type"],
+        "description" => $_POST["description"],
+        "visibility" => $_POST["visibility"],
+        "start_date" => $_POST["start_date"],
+        "budget" => $_POST["budget"],
+        "duration" => $_POST["duration"],
+        "contractor_type" => $_POST["contractor_type"],
+        "category2" => $_POST["category2"],
+        "subcategory2" => $_POST["subcategory2"]
     );
 
-    $job_ref = $_GET['job_ref'];
+    $job_ref = $_POST['job_ref'];
 
     $response = $jobs->editJob($job_ref,$params);
 
@@ -117,7 +117,7 @@ if($_GET['operation']=='EditJob' && !empty($_GET['operation']) ){
 }
 
 //Function for posting a job to upwork
-if($_GET['operation']=='CancelJob' && !empty($_GET['operation']) ){
+if($_POST['operation']=='CancelJob' && !empty($_POST['operation']) ){
 
     $jobs = new \Upwork\API\Routers\Hr\Jobs($client);
 
@@ -126,14 +126,14 @@ if($_GET['operation']=='CancelJob' && !empty($_GET['operation']) ){
         "reason" => "41"
     );
 
-    $job_ref = $_GET['job_ref'];
+    $job_ref = $_POST['job_ref'];
 
     $response = $jobs->deleteJob($job_ref,$params);
 
     echo $response;
 }
 
-if($_GET['operation']=='test' && !empty($_GET['operation']) ){
+if($_POST['operation']=='test' && !empty($_POST['operation']) ){
     $metadata = new \Upwork\API\Routers\Metadata($client);
     $a = $metadata->getCategoriesV2();
     echo $a;
