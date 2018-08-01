@@ -131,9 +131,7 @@ if($_POST['operation']=='CancelJob' && !empty($_POST['operation']) ){
     $jobs = new \Upwork\API\Routers\Hr\Jobs($client);
 
     //Setting all params required to cancel a job
-    $params = array(
-        "reason" => 49
-    );
+    $params = array("reason_code" => "41");
 
     $job_ref = $_POST['job_ref'];
 
