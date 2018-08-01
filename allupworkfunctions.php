@@ -132,7 +132,7 @@ if($_POST['operation']=='CancelJob' && !empty($_POST['operation']) ){
 
     //Setting all params required to cancel a job
     $params = array(
-        "reason" => "41"
+        "reason_code" => "41"
     );
 
     $job_ref = $_POST['job_ref'];
