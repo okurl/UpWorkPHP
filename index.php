@@ -59,8 +59,8 @@ require __DIR__ . '/vendor/autoload.php';
 
 $config = new \Upwork\API\Config(
     array(
-        'consumerKey'       => '150e9ef331f23f4eef46287bbdfbcec7',  // SETUP YOUR CONSUMER KEY
-        'consumerSecret'    => '7981757d2940ad17',                // SETUP KEY SECRET
+        'consumerKey'       => '8242b98f8b9f13fa54618b3cd3664268',  // SETUP YOUR CONSUMER KEY
+        'consumerSecret'    => '67f56bf386761969',                // SETUP KEY SECRET
 //        'accessToken'       => $_SESSION['access_token'],       // got access token
 //        'accessSecret'      => $_SESSION['access_secret'],      // got access secret
 //        'verifySsl'         => false,                           // whether to verify SSL

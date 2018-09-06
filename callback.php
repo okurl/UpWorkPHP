@@ -51,8 +51,8 @@
 
         $config = new \Upwork\API\Config(
             array(
-                'consumerKey'       => '150e9ef331f23f4eef46287bbdfbcec7',  // SETUP YOUR CONSUMER KEY
-                'consumerSecret'    => '7981757d2940ad17',                // SETUP KEY SECRET
+                'consumerKey'       => '8242b98f8b9f13fa54618b3cd3664268',  // SETUP YOUR CONSUMER KEY
+                'consumerSecret'    => '67f56bf386761969',                // SETUP KEY SECRET
                 'requestToken'       => $_GET['oauth_token'],       // got access token
                 'verifier'      => $_GET['oauth_verifier'],      // got access secret
         //      'verifySsl'         => false,                           // whether to verify SSL
