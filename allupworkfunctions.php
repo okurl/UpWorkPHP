@@ -48,7 +48,9 @@ $client->getServer()
 */
 if($_POST['operation']=='team' && !empty($_POST['team']) ){
     $teams = new \Upwork\API\Routers\Organization\Teams($client);
-    echo $teams->getList();
+    $a = $teams->getList();
+
+    echo $a.'res';
 }
 
 
