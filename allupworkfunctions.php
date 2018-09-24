@@ -48,19 +48,16 @@ $client->getServer()
 */
 if($_POST['operation']=='team' && !empty($_POST['team']) ){
     $teams = new \Upwork\API\Routers\Organization\Teams($client);
-    echo json_encode($teams->getList());
+    echo $teams->getList();
 }
 
-//Getting team of User account
-$teams = new \Upwork\API\Routers\Organization\Teams($client);
-$tempTeam = $teams->getList();
-$buyerteamreference = $tempTeam[0]['reference'];
+
 
 //Function for posting a job to upwork
 if($_POST['operation']=='PostJob' && !empty($_POST['operation']) ){
 
     //reference id for posting job and other operation
-    $buyer_team_reference = $buyerteamreference; //"4940645";
+    $buyer_team_reference = "4940645";
 
     $jobs = new \Upwork\API\Routers\Hr\Jobs($client);
 
@@ -102,7 +99,7 @@ if($_POST['operation']=='PostJob' && !empty($_POST['operation']) ){
 //Function for posting a job to upwork
 if($_POST['operation']=='EditJob' && !empty($_POST['operation']) ){
     //reference id for posting job and other operation
-    $buyer_team_reference = $buyerteamreference; //"4940645";
+    $buyer_team_reference = "4940645";
 
     $jobs = new \Upwork\API\Routers\Hr\Jobs($client);
 
