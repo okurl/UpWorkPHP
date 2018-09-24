@@ -46,8 +46,10 @@ $client->getServer()
  * cancelling job
  * etc
 */
-
-
+if($_POST['operation']=='team' && !empty($_POST['team']) ){
+    $teams = new \Upwork\API\Routers\Organization\Teams($client);
+    echo json_encode($teams->getList());
+}
 //Function for posting a job to upwork
 if($_POST['operation']=='PostJob' && !empty($_POST['operation']) ){
 
