@@ -48,10 +48,12 @@ $client->getServer()
  * etc
 */
 if($_POST['operation']=='team' && !empty($_POST['operation']) ){
+    
     $teams = new \Upwork\API\Routers\Organization\Teams($client);
-    $a = $teams->getList();
+    
+    $response = $teams->getList();
 
-    echo json_encode($a);
+    echo json_encode($response);
 }
 
 
@@ -59,9 +61,6 @@ if($_POST['operation']=='team' && !empty($_POST['operation']) ){
 
 //Function for posting a job to upwork
 if($_POST['operation']=='PostJob' && !empty($_POST['operation']) ){
-
-    //reference id for posting job and other operation
-    $buyer_team_reference = "4940645"; //Hard Coded since not able to get using team api endpoint uri
 
     $jobs = new \Upwork\API\Routers\Hr\Jobs($client);
 
@@ -91,8 +90,6 @@ if($_POST['operation']=='PostJob' && !empty($_POST['operation']) ){
 
 //Function for posting a job to upwork
 if($_POST['operation']=='EditJob' && !empty($_POST['operation']) ){
-    //reference id for posting job and other operation
-    $buyer_team_reference = "4940645"; //Hard Coded since not able to get using team api endpoint uri
 
     $jobs = new \Upwork\API\Routers\Hr\Jobs($client);
 
