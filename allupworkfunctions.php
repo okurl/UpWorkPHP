@@ -30,6 +30,7 @@ $config = new \Upwork\API\Config(
 $client = new \Upwork\API\Client($config);
 
 //Adding token and secret to the server for authenicated user
+
 $client->getServer()
         ->getInstance()
         ->addServerToken(
@@ -40,7 +41,7 @@ $client->getServer()
             0
         );
 
-/* All main operations starts here---
+/* All main operations starts here
  * Like Posting job,
  * editing job,
  * cancelling job
@@ -50,8 +51,9 @@ if($_POST['operation']=='team' && !empty($_POST['operation']) ){
     $teams = new \Upwork\API\Routers\Organization\Teams($client);
     $a = $teams->getList();
 
-    echo $a.'res';
+    echo json_encode($a);
 }
+
 
 
 
@@ -59,7 +61,7 @@ if($_POST['operation']=='team' && !empty($_POST['operation']) ){
 if($_POST['operation']=='PostJob' && !empty($_POST['operation']) ){
 
     //reference id for posting job and other operation
-    $buyer_team_reference = "4940645";
+    $buyer_team_reference = "4940645"; //Hard Coded since not able to get using team api endpoint uri
 
     $jobs = new \Upwork\API\Routers\Hr\Jobs($client);
 
@@ -101,7 +103,7 @@ if($_POST['operation']=='PostJob' && !empty($_POST['operation']) ){
 //Function for posting a job to upwork
 if($_POST['operation']=='EditJob' && !empty($_POST['operation']) ){
     //reference id for posting job and other operation
-    $buyer_team_reference = "4940645";
+    $buyer_team_reference = "4940645"; //Hard Coded since not able to get using team api endpoint uri
 
     $jobs = new \Upwork\API\Routers\Hr\Jobs($client);
 
