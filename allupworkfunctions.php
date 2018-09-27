@@ -67,18 +67,7 @@ if($_POST['operation']=='PostJob' && !empty($_POST['operation']) ){
 
     //Setting all params required to post a job
     $params = array(
-        "buyer_team__reference" => $buyer_team_reference,
-        /*
-        "title" => "Test oAuth API create job APIS",
-        "job_type" => "hourly",
-        "description" => "A description",
-        "visibility" => "public",
-        "category2" => "Web, Mobile & Software Dev",
-        "subcategory2" => "Web Development",
-        "skills" => "python;javascript",
-        "budget" => "100",
-        "duration" => "12"
-        */
+        "buyer_team__reference" => $_POST["teamCode"],
         "title" => $_POST["title"],
         "job_type" => $_POST["job_type"],
         "description" => $_POST["description"],
@@ -109,7 +98,7 @@ if($_POST['operation']=='EditJob' && !empty($_POST['operation']) ){
 
     //Setting all params required to edit a job
     $params = array(
-        "buyer_team__reference" => $buyer_team_reference,
+        "buyer_team__reference" => $_POST["teamCode"],
         "title" => $_POST["title"],
         "job_type" => $_POST["job_type"],
         "description" => $_POST["description"],
