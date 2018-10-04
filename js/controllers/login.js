@@ -21,7 +21,7 @@ NG_PMOne.controller("mainCtrl", function ($rootScope, $scope, $timeout, $http, $
 			$http(
 				{
 					method: 'POST',
-					url: 'https://pmpupwork.azurewebsites.net/UprowkWebApp/_api/upwork/tokenwrite_uat',
+					url: 'https://pmpupwork.azurewebsites.net/UprowkWebApp/api/upwork/tokenwrite_uat',
 					data:data
 				}).then(function successCallback(response) {
 					console.log('Add Token success', response);
