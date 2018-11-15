@@ -32,13 +32,9 @@
 
 // Our php-oauth library - used in this example - requires a session
 session_start();
-if(!empty($_GET['userId'])){
-    $_SESSION['userId'] = $_GET['userId'];
-    $_SESSION['sitetoken'] = $_GET['sitetoken'];
-}
-else{
-    if(isset($_SESSION['userId'])){
-    
+
+$_SESSION['userId'] = $_GET['userId'];
+$_SESSION['sitetoken'] = $_GET['sitetoken'];
 ?>
     <script>
         //clear local storage
@@ -100,11 +96,6 @@ $auth = new \Upwork\API\Routers\Auth($client);
 $info = $auth->getUserInfo();
 
 print_r($info);
-}
-else{
-    header('Location: https://www.upwork.com/ab/jobs-home/4810206');
-}
-}
 ?>
 </body>
 </html>
