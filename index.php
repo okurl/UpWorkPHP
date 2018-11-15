@@ -38,12 +38,7 @@ if(!empty($_GET['userId'])){
 }
 else{
     if(isset($_SESSION['userId'])){
-
-    }
-    else{
-        header('Location: https://www.upwork.com/ab/jobs-home/4810206');
-    }
-}
+    
 ?>
     <script>
         //clear local storage
@@ -105,6 +100,11 @@ $auth = new \Upwork\API\Routers\Auth($client);
 $info = $auth->getUserInfo();
 
 print_r($info);
+}
+else{
+    header('Location: https://www.upwork.com/ab/jobs-home/4810206');
+}
+}
 ?>
 </body>
 </html>
