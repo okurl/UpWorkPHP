@@ -32,6 +32,7 @@
 
 // Our php-oauth library - used in this example - requires a session
 session_start();
+error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
 if(!empty($_GET['userId'])){
     $_SESSION['userId'] = $_GET['userId'];
     $_SESSION['sitetoken'] = $_GET['sitetoken'];
